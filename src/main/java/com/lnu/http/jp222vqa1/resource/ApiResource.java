@@ -42,7 +42,7 @@ public class ApiResource {
     public ResponseEntity<ResourceSupport> getUserBasedOpts() {
         ResourceSupport resource = new ResourceSupport();
         resource.add(linkTo(methodOn(ApiResource.class)
-                .getAll())
+                .getUserBasedOpts())
                 .withSelfRel()
                 .withTitle("user-based"));
         resource.add(linkTo(methodOn(ApiResource.class)
@@ -60,7 +60,7 @@ public class ApiResource {
     public ResponseEntity<ResourceSupport> getItemBasedOpts() {
         ResourceSupport resource = new ResourceSupport();
         resource.add(linkTo(methodOn(ApiResource.class)
-                .getAll())
+                .getItemBasedOpts())
                 .withSelfRel()
                 .withTitle("item-based"));
         resource.add(linkTo(methodOn(ApiResource.class)
