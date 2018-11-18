@@ -22,7 +22,7 @@
 ```
 
 #### User-Based
-`http://localhost/api/ib`
+`http://localhost/api/ub`
 
 ```
 {
@@ -44,7 +44,7 @@
 ```
 
 #### Item-Based
-`http://localhost:8080/api/ub`
+`http://localhost:8080/api/ib`
 
 ```
 {
