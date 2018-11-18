@@ -1,7 +1,7 @@
 # 2DV515-A1 API
 
 #### API
-`http://localhost:8080/api`
+`http://localhost/api`
 
 ```
 {
@@ -22,7 +22,7 @@
 ```
 
 #### User-Based
-`http://localhost:8080/api/ub`
+`http://localhost/api/ub`
 
 ```
 {
