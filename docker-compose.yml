@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  proxy:
+    image: rec_proxy
+    restart: unless-stopped
+    build:
+        context: ./nginx/
+        args:
+            CONFIG_FILE: 'nginx.conf'
+    # depends_on:
+    #     - rest
+    #     - gui
+    networks:
+        - recosystem
+    ports:
+        - '80:80'
+
+  rest:
+    image: rec_rest
+    restart: unless-stopped
+    build:
+      context: ./server/
+    networks:
+      - recosystem
+    working_dir: /server
+    volumes:
+      - ./server:/server
+      - ~/.m2:/root/.m2
+    command: mvn clean spring-boot:run
+
+  frontend:
+    image: rec_frontend
+    restart: unless-stopped
+    build:
+      context: ./frontend/
+    networks:
+      - recosystem
+    # depends_on:
+    #   - rest
+    volumes:
+      - ./frontend/:/app/
+      - node_modules_frontend:/app/node_modules
+
+volumes:
+  node_modules_frontend:
+
+networks:
+  recosystem:
+    driver: bridge
