@@ -22,7 +22,7 @@
 ```
 
 #### User-Based
-`http://localhost/api/ub`
+`http://localhost/api/ib`
 
 ```
 {
